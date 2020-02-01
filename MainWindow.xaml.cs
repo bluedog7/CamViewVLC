@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Ozeki.Media.MediaHandlers.IPCamera;
+using Ozeki.Media.MediaHandlers.Video;
+using Ozeki.Media.Video.Controls;
+using Ozeki.Media.IPCamera;
+using Ozeki.Media.MediaHandlers;
 
 namespace CamViewVLC
 {
@@ -20,6 +25,9 @@ namespace CamViewVLC
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IIPCamera _camera;
+        private DrawingImageProvider _drawingImageProvider;
+        private MediaConnector _connector;
         public MainWindow()
         {
             InitializeComponent();
