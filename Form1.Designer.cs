@@ -65,7 +65,6 @@
             this.radioButton22 = new System.Windows.Forms.RadioButton();
             this.radioButton23 = new System.Windows.Forms.RadioButton();
             this.radioButton24 = new System.Windows.Forms.RadioButton();
-            this.axipropsapiCtrl1 = new AxIPROPSAPILib.AxipropsapiCtrl();
             this.vlcControl1 = new Vlc.DotNet.Forms.VlcControl();
             this.vlcControl2 = new Vlc.DotNet.Forms.VlcControl();
             this.vlcControl3 = new Vlc.DotNet.Forms.VlcControl();
@@ -90,8 +89,9 @@
             this.vlcControl22 = new Vlc.DotNet.Forms.VlcControl();
             this.vlcControl23 = new Vlc.DotNet.Forms.VlcControl();
             this.vlcControl24 = new Vlc.DotNet.Forms.VlcControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.axipropsapiCtrl1 = new AxIPROPSAPILib.AxipropsapiCtrl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axipropsapiCtrl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl3)).BeginInit();
@@ -116,6 +116,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl24)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axipropsapiCtrl1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLiveStart
@@ -387,7 +389,8 @@
             this.button7.Size = new System.Drawing.Size(64, 61);
             this.button7.TabIndex = 36;
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.Button7_Click);
+            this.button7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button7_MouseDown);
+            this.button7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button7_MouseUp);
             // 
             // button8
             // 
@@ -397,7 +400,8 @@
             this.button8.Size = new System.Drawing.Size(64, 61);
             this.button8.TabIndex = 37;
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.Button8_Click);
+            this.button8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button8_MouseDown);
+            this.button8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button8_MouseUp);
             // 
             // button9
             // 
@@ -567,17 +571,6 @@
             this.radioButton24.TabStop = true;
             this.radioButton24.UseVisualStyleBackColor = true;
             this.radioButton24.Click += new System.EventHandler(this.radioButton24_Click);
-            // 
-            // axipropsapiCtrl1
-            // 
-            this.axipropsapiCtrl1.Enabled = true;
-            this.axipropsapiCtrl1.Location = new System.Drawing.Point(1542, 654);
-            this.axipropsapiCtrl1.Name = "axipropsapiCtrl1";
-            this.axipropsapiCtrl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axipropsapiCtrl1.OcxState")));
-            this.axipropsapiCtrl1.Size = new System.Drawing.Size(192, 192);
-            this.axipropsapiCtrl1.TabIndex = 5;
-            this.axipropsapiCtrl1.OnError += new AxIPROPSAPILib._IipropsapiCtrlEvents_OnErrorEventHandler(this.AxipropsapiCtrl1_OnError_1);
-            this.axipropsapiCtrl1.MouseDownEvent += new AxIPROPSAPILib._IipropsapiCtrlEvents_MouseDownEventHandler(this.AxipropsapiCtrl1_MouseDownEvent);
             // 
             // vlcControl1
             // 
@@ -891,11 +884,31 @@
             this.vlcControl24.VlcMediaplayerOptions = null;
             this.vlcControl24.Click += new System.EventHandler(this.vlcControl24_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.axipropsapiCtrl1);
+            this.groupBox1.Location = new System.Drawing.Point(1491, 559);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(364, 296);
+            this.groupBox1.TabIndex = 87;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "선택 카메라";
+            // 
+            // axipropsapiCtrl1
+            // 
+            this.axipropsapiCtrl1.Enabled = true;
+            this.axipropsapiCtrl1.Location = new System.Drawing.Point(24, 34);
+            this.axipropsapiCtrl1.Name = "axipropsapiCtrl1";
+            this.axipropsapiCtrl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axipropsapiCtrl1.OcxState")));
+            this.axipropsapiCtrl1.Size = new System.Drawing.Size(334, 246);
+            this.axipropsapiCtrl1.TabIndex = 88;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 979);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.vlcControl24);
             this.Controls.Add(this.vlcControl23);
             this.Controls.Add(this.vlcControl22);
@@ -954,7 +967,6 @@
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.axipropsapiCtrl1);
             this.Controls.Add(this.buttonLiveStop);
             this.Controls.Add(this.buttonLiveStart);
             this.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -964,7 +976,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axipropsapiCtrl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl3)).EndInit();
@@ -989,6 +1000,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl24)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axipropsapiCtrl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -997,7 +1010,6 @@
         #endregion
         private System.Windows.Forms.Button buttonLiveStart;
         private System.Windows.Forms.Button buttonLiveStop;
-        private AxIPROPSAPILib.AxipropsapiCtrl axipropsapiCtrl1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -1056,6 +1068,8 @@
         private Vlc.DotNet.Forms.VlcControl vlcControl22;
         private Vlc.DotNet.Forms.VlcControl vlcControl23;
         private Vlc.DotNet.Forms.VlcControl vlcControl24;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private AxIPROPSAPILib.AxipropsapiCtrl axipropsapiCtrl1;
     }
 }
 

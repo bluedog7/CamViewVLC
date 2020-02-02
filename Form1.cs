@@ -54,7 +54,7 @@ namespace SimpleSample_Audio
             //Set properties to connect the device
             for (int i = 0; i < 1; i++)
             {
-                CameraControls[i] = (AxIPROPSAPILib.AxipropsapiCtrl)this.Controls["axipropsapiCtrl" + (i + 1).ToString()];
+                CameraControls[i] = axipropsapiCtrl1;
                 CameraControls[i].IPAddr = (String)ar.GetValue("cam" + (i + 1).ToString(), typeof(String));
                 CameraControls[i].DeviceType = 2;
                 CameraControls[i].HttpPort = 80;
@@ -86,8 +86,6 @@ namespace SimpleSample_Audio
                 CameraControls[i].OnAlmStatusCBEnable = 0;
                 CameraControls[i].OnFtpStatusCBEnable = 0;
 
-                CameraControls[i].Width = 227;
-                CameraControls[i].Height = 157;
             }
             for (int i = 0; i < 24; i++)
             {
@@ -122,6 +120,7 @@ namespace SimpleSample_Audio
             }
 
             SelectedCamera = 0;
+            radioButton1.PerformClick();
 
         }
 
@@ -227,7 +226,7 @@ namespace SimpleSample_Audio
                 }
 
             string[] options = { ":network-caching=100" };
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 24; i++)
                 CameraControls2[i].Play(new Uri(RTSP[i]), options);
          /*   vlcControl1.Play(new Uri(RTSP[0]),options);
             vlcControl2.Play(new Uri(RTSP[1]), options);
@@ -857,31 +856,7 @@ namespace SimpleSample_Audio
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            int iRet;
-            int iChannel;
-            int iPan;
-            int iTilt;
-            int iZoom;
-            int iFocus;
-            int iIris;
 
-
-            iChannel = 1;
-            iPan = 0;
-            iTilt = 0;
-            iZoom = 1;
-            iFocus = 0;
-            iIris = 0;
-            iRet = CameraControls[SelectedCamera].CameraControl(iChannel, iPan, iTilt, iZoom, iFocus, iIris);
-            Logging("[Function] CamControl(Tele):" + iRet.ToString());
-            System.Threading.Thread.Sleep(1000);
-            iChannel = 1;
-            iPan = 0;
-            iTilt = 0;
-            iZoom = 0;
-            iFocus = 0;
-            iIris = 0;
-            iRet = CameraControls[SelectedCamera].CameraControl(iChannel, iPan, iTilt, iZoom, iFocus, iIris);
         }
 
         private void Button8_Click(object sender, EventArgs e)
@@ -3356,6 +3331,90 @@ namespace SimpleSample_Audio
                     Logging("[Function] Close");
                 }
             }
+        }
+
+        private void Button7_MouseDown(object sender, MouseEventArgs e)
+        {
+            int iRet;
+            int iChannel;
+            int iPan;
+            int iTilt;
+            int iZoom;
+            int iFocus;
+            int iIris;
+
+
+            iChannel = 1;
+            iPan = 0;
+            iTilt = 0;
+            iZoom = 1;
+            iFocus = 0;
+            iIris = 0;
+            iRet = CameraControls[0].CameraControl(iChannel, iPan, iTilt, iZoom, iFocus, iIris);
+            Logging("[Function] CamControl(Tele):" + iRet.ToString());
+        }
+
+        private void Button7_MouseUp(object sender, MouseEventArgs e)
+        {
+            int iRet;
+            int iChannel;
+            int iPan;
+            int iTilt;
+            int iZoom;
+            int iFocus;
+            int iIris;
+
+
+            iChannel = 1;
+            iPan = 0;
+            iTilt = 0;
+            iZoom = 0;
+            iFocus = 0;
+            iIris = 0;
+            iRet = CameraControls[0].CameraControl(iChannel, iPan, iTilt, iZoom, iFocus, iIris);
+            Logging("[Function] CamControl(Tele):" + iRet.ToString());
+        }
+
+        private void Button8_MouseDown(object sender, MouseEventArgs e)
+        {
+            int iRet;
+            int iChannel;
+            int iPan;
+            int iTilt;
+            int iZoom;
+            int iFocus;
+            int iIris;
+
+
+            iChannel = 1;
+            iPan = 0;
+            iTilt = 0;
+            iZoom = -1;
+            iFocus = 0;
+            iIris = 0;
+            iRet = CameraControls[0].CameraControl(iChannel, iPan, iTilt, iZoom, iFocus, iIris);
+
+        }
+
+        private void Button8_MouseUp(object sender, MouseEventArgs e)
+        {
+            int iRet;
+            int iChannel;
+            int iPan;
+            int iTilt;
+            int iZoom;
+            int iFocus;
+            int iIris;
+
+
+            iChannel = 1;
+            iPan = 0;
+            iTilt = 0;
+            iZoom = 0;
+            iFocus = 0;
+            iIris = 0;
+            iRet = CameraControls[0].CameraControl(iChannel, iPan, iTilt, iZoom, iFocus, iIris);
+
         }
 
 
