@@ -1,0 +1,13 @@
+E:\work\001_PlayLive\bin\SimpleSample_Live.exe
+E:\work\001_PlayLive\bin\SimpleSample_Live.pdb
+E:\work\001_PlayLive\bin\Interop.IPROPSAPILib.dll
+E:\work\001_PlayLive\bin\AxInterop.IPROPSAPILib.dll
+E:\work\001_PlayLive\obj\x86\Debug\Interop.IPROPSAPILib.dll
+E:\work\001_PlayLive\obj\x86\Debug\AxInterop.IPROPSAPILib.dll
+E:\work\001_PlayLive\obj\x86\Debug\SimpleSample_Live.csproj.ResolveComReference.cache
+E:\work\001_PlayLive\obj\x86\Debug\SimpleSample_Live.Form1.resources
+E:\work\001_PlayLive\obj\x86\Debug\SimpleSample_Live.Form2.resources
+E:\work\001_PlayLive\obj\x86\Debug\SimpleSample_Live.Properties.Resources.resources
+E:\work\001_PlayLive\obj\x86\Debug\SimpleSample_Live.csproj.GenerateResource.cache
+E:\work\001_PlayLive\obj\x86\Debug\SimpleSample_Live.exe
+E:\work\001_PlayLive\obj\x86\Debug\SimpleSample_Live.pdb
